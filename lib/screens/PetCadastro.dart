@@ -59,7 +59,6 @@ class _PetCadastroState extends State<PetCadastro> {
                 ),
                    Image.asset(
                       "assets/image/Line.png",  
-                      
                      ),
                ],
              ),

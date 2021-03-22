@@ -1,6 +1,6 @@
 # flutter_pets
 
-https://www.figma.com/file/Ev9sxivoJB3yp0SnLW0DNi/Pets?node-id=0%3A1
+ - [Figma](https://www.figma.com/file/Ev9sxivoJB3yp0SnLW0DNi/Pets?node-id=0%3A1)
 
 
 A new Flutter project.
