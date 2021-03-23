@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pets/screens/Cadastro.dart';
-import 'package:flutter_pets/screens/Login.dart';
-import 'package:flutter_pets/screens/PetCadastro.dart';
 
-import 'screens/Splashscreen.dart';
+import 'package:flutter_pets/src/screens/Cadastro.dart';
+import 'package:flutter_pets/src/screens/Login.dart';
+import 'package:flutter_pets/src/screens/PetCadastro.dart';
+import 'package:flutter_pets/src/screens/Splashscreen.dart';
+import 'package:flutter_pets/src/screens/TabelaConsumo.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
       routes: {
         'login': (ctx) => Login(),
         'cadastro': (ctx) => Cadastro(),
-        'petCadastro': (ctx) => PetCadastro()
+        'petCadastro': (ctx) => PetCadastro(),
+        'tabelaConsumo': (ctx) => TabelaConsumo()
       },
     );
   }

@@ -1,7 +1,9 @@
+
+
 import 'package:flutter/material.dart';
-import 'package:flutter_pets/components/Input.dart';
-import 'package:flutter_pets/components/Submit.dart';
-import 'package:flutter_pets/screens/PetCadastro.dart';
+import 'package:flutter_pets/src/components/Input.dart';
+import 'package:flutter_pets/src/components/Submit.dart';
+import 'package:flutter_pets/src/screens/PetCadastro.dart';
 
 class Cadastro extends StatefulWidget {
   Cadastro({Key key}) : super(key: key);

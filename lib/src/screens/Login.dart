@@ -1,9 +1,12 @@
+
+
 import 'package:flutter/material.dart';
-import 'package:flutter_pets/components/Hyperlink.dart';
-import 'package:flutter_pets/components/Input.dart';
-import 'package:flutter_pets/components/Submit.dart';
-import 'package:flutter_pets/screens/Cadastro.dart';
+import 'package:flutter_pets/src/components/Hyperlink.dart';
+import 'package:flutter_pets/src/components/Input.dart';
+import 'package:flutter_pets/src/components/Submit.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import 'Cadastro.dart';
 
 class Login extends StatefulWidget {
   Login({Key key}) : super(key: key);
