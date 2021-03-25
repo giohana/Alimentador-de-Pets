@@ -1,0 +1,37 @@
+[
+    {
+        "porte": "Miniatura",
+        "pesoMin": "1",
+        "pesoMax": "4",
+        "gramasMin": "55",
+        "gramasMax": "95"
+    },
+    {
+        "porte": "Pequeno",
+        "pesoMin":"4",
+        "pesoMax": "8",
+        "gramasMin": "95",
+        "gramasMax": "155"
+    },
+    {
+        "porte": "Médio",
+        "pesoMin": "8",
+        "pesoMax": "20",
+        "gramasMin": "160",
+        "gramasMax": "320"
+    },
+    {
+        "porte": "Grande",
+        "pesoMin": "20",
+        "pesoMax": "40",
+        "gramasMin": "320",
+        "gramasMax": "530"
+    },
+    {
+        "porte": "Gigante",
+        "pesoMin": "40",
+        "pesoMax": "+40",
+        "gramasMin": "530",
+        "gramasMax": "810"
+    }
+]

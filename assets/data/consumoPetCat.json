@@ -1,0 +1,37 @@
+[
+    {
+        "porte": "Filhote 1",
+        "pesoMin": "0",
+        "pesoMax": "1.6",
+        "gramasMin": "10",
+        "gramasMax": "20"
+    },
+    {
+        "porte": "Filhote 2",
+        "pesoMin": "1.6",
+        "pesoMax": "3.7",
+        "gramasMin": "25",
+        "gramasMax": "40"
+    },
+    {
+        "porte": "Adulto 1",
+        "pesoMin": "4",
+        "pesoMax": "6",
+        "gramasMin": "40",
+        "gramasMax": "80"
+    },
+    {
+        "porte": "Adulto 2",
+        "pesoMin": "7",
+        "pesoMax": "9",
+        "gramasMin": "60",
+        "gramasMax": "100"
+    },
+    {
+        "porte": "Adulto 3",
+        "pesoMin": "10",
+        "pesoMax": "+10",
+        "gramasMin": "80",
+        "gramasMax": "120"
+    }
+]

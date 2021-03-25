@@ -1,29 +1,67 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pets/src/components/ContainerTable.dart';
+import 'package:flutter_pets/src/components/CriaTable.dart';
 
 class TableGrid extends StatelessWidget {
-  const TableGrid({Key key}) : super(key: key);
+  //const TableGrid({Key key}) : super(key: key);
+  var petType;
+
+  TableGrid({@required this.petType});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ListView(
-        children: [
-          Center(
-              child: Text(
-                'Cachorro',
-                style: TextStyle(color: Colors.black, fontSize: 25),
-              ),
-            ),
-        ],
-      ),
+    return Column(
+      children: [
+        SizedBox(
+            height: 20,
+          ),
+        Text(
+          petType,
+          style: TextStyle(color: Colors.black, fontSize: 25),
+        ),
+        SizedBox(
+            height: 15,
+          ),
+        Row(
+          children: [
+            ContainerTable(name: 'Porte'),
+            ContainerTable(name: 'Peso'),
+            ContainerTable(name: 'Gramas')
+          ],
+        ),
+        Row(children: [
+          SizedBox(
+            width: 120,
+          ),
+          ContainerTableDois(),
+          
+     
+          
+        
+          ContainerTableDois(),
+          
+     
+          
+        ]),
+        
+      ],
     );
   }
 }
 
-
-
-
-
+// return Container(
+//       // child: ListView(
+//       //   children: [
+//       //     Center(
+//       //         child: Text(
+//       //           'Cachorro',
+//       //           style: TextStyle(color: Colors.black, fontSize: 25),
+//       //         ),
+//       //       ),
+//       //   ],
+//       // ),
+//     );
+//   }
 
 // Container(
 //                child: Text(
@@ -39,9 +77,7 @@ class TableGrid extends StatelessWidget {
 //                width: 70,
 //             ),
 
-
 // GridConsumo(),
-
 
 // Center(
 //               child: Text(
