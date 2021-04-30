@@ -23,27 +23,16 @@ class _CadastroState extends State<Cadastro> {
               SizedBox(
                 height: 120,
               ),
-              Input(
-                ctrl: ddd(),
-                keyboard: TextInputType.text,
-                label: 'Usúario',
-              ),
+              Input(TextInputType.text, 'Usúario', ddd(),),
               SizedBox(
                 height: 40,
               ),
-              Input(
-                ctrl: ddd(),
-                keyboard: TextInputType.number,
-                label: 'Senha',
-              ),
+              Input( TextInputType.number, 'Senha', ddd(),),
               SizedBox(
                 height: 40,
               ),
-              Input(
-                ctrl: ddd(),
-                keyboard: TextInputType.number,
-                label: 'Confirmar senha',
-              ),
+              Input(TextInputType.number, 'Confirmar senha', ddd(),),
+
               SubmitBotton(
                 ctrl: () => { Navigator.push(
                       context,

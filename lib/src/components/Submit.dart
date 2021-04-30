@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 class SubmitBotton extends StatelessWidget {
   //const SubmitBotton({Key key}) : super(key: key);
 
-  var ctrl;
-  var title;
+  final Function ctrl;
+  final String title;
 
   SubmitBotton({
-    @required this.ctrl,
-    @required this.title,
+    this.ctrl,
+    this.title,
   });
 
   @override

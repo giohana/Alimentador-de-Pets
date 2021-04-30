@@ -1,0 +1,10 @@
+[
+    {
+        "id" : 1,
+        "tipoPet" : "Gato"
+    },
+    {
+        "id" : 2,
+        "tipoPet" : "Cachorro"
+    }
+]

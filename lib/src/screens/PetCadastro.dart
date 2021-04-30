@@ -1,6 +1,5 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:flutter_pets/src/components/DropDownButton.dart';
 
 import 'package:flutter_pets/src/components/Hyperlink.dart';
 import 'package:flutter_pets/src/components/Input.dart';
@@ -55,9 +54,10 @@ class _PetCadastroState extends State<PetCadastro> {
                 height: 30,
               ),
               Input(
-                  ctrl: ddd(),
-                  keyboard: TextInputType.name,
-                  label: 'Seu nome completo'),
+                TextInputType.name,
+                'Seu nome completo',
+                ddd(),
+              ),
               SizedBox(
                 height: 20,
               ),
@@ -68,23 +68,42 @@ class _PetCadastroState extends State<PetCadastro> {
                 height: 30,
               ),
               Input(
-                  ctrl: ddd(),
-                  keyboard: TextInputType.name,
-                  label: 'Nome do seu pet'),
-              SizedBox(
-                height: 20,
+                TextInputType.name,
+                'Nome do seu pet',
+                ddd(),
               ),
-              Input(ctrl: ddd(), keyboard: TextInputType.name, label: 'Raça'),
               SizedBox(
                 height: 20,
               ),
               Input(
-                  ctrl: ddd(),
-                  keyboard: TextInputType.name,
-                  label: 'Consume médio de ração'),
-                  SizedBox(
-                    height: 8,
-                  ),
+                TextInputType.name,
+                'Raça',
+                ddd(),
+              ),
+
+              SizedBox(
+                height: 20,
+              ),
+              // DropDownButton(),
+              Input(
+                TextInputType.name,
+                'Peso',
+                ddd(),
+              ),
+
+              SizedBox(
+                height: 8,
+              ),
+              Input(
+                TextInputType.name,
+                'Consume médio de ração (gramas)',
+                ddd(),
+              ),
+
+              SizedBox(
+                height: 8,
+              ),
+
               Row(
                 children: [
                   SizedBox(
@@ -93,15 +112,17 @@ class _PetCadastroState extends State<PetCadastro> {
                   new InkWell(
                       child: new Text(
                         'Ver sugestão de consumo',
-                        style:
-                            TextStyle(
-                              color: Colors.lightBlue[600], 
-                              fontSize: 13,
-                            ),
+                        style: TextStyle(
+                          color: Colors.lightBlue[600],
+                          fontSize: 13,
+                        ),
                       ),
-                      onTap: () => { Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => TabelaConsumo()))}),
+                      onTap: () => {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => TabelaConsumo()))
+                          }),
                 ],
               ),
               SizedBox(
