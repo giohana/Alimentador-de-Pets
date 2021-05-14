@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_pets/src/components/Hyperlink.dart';
 import 'package:flutter_pets/src/components/Input.dart';
 import 'package:flutter_pets/src/components/Submit.dart';
+import 'package:flutter_pets/src/screens/Home.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'Cadastro.dart';
@@ -20,7 +21,7 @@ class _LoginState extends State<Login> {
   final _focusSenha = FocusNode();
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
   }
 
@@ -98,6 +99,8 @@ class _LoginState extends State<Login> {
     String password = _ctrlLoginPassword.text;
 
     print("User: $user, Senha: $password");
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => Home()));
   }
 
   String _validateLogin(String text) {
@@ -107,11 +110,11 @@ class _LoginState extends State<Login> {
     return null;
   }
 
-    String _validatePassword(String text) {
+  String _validatePassword(String text) {
     if (text.isEmpty) {
       return "Digite a senha!";
     }
-    if(text.length <= 3 || text.length > 4){
+    if (text.length <= 3 || text.length > 4) {
       return "A senha deve conter 4 números.";
     }
     return null;
