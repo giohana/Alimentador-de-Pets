@@ -16,76 +16,94 @@ class _CadastroState extends State<Cadastro> {
   final _formKey = GlobalKey<FormState>();
   var _ctrlLoginPassword = TextEditingController();
   var _ctrlLoginUser = TextEditingController();
+  var _ctrlLoginPasswordConfirm = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Scaffold(
-        body: Center(
-          child: ListView(
-            children: <Widget>[
-              SizedBox(
-                height: 20,
-              ),
-              Image.asset(
-                "assets/image/dogAndCat.png",
-                height: 60,
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Input(
-                TextInputType.text,
-                'Usúario',
-                _ctrlLoginUser,
-                validator: _validateLogin,
-                hint: "usuario01",
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Input(
-                TextInputType.number,
-                'Senha',
-                _ctrlLoginPassword,
-                hint: "Senha numérica de 4 dígitos",
-                obscurePassword: true,
-                validator: _validatePassword,
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Input(
-                TextInputType.number,
-                'Confirmar senha',
-                _ctrlLoginPassword,
-                obscurePassword: true,
-                validator: _validatePassword,
-              ),
-              Hyperlink(text: 'tabela consumo', ctrl: (){
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => TabelaConsumo()));
-              }),
-              SubmitBotton(
-                ctrl: _ctrlLogin,
-                //ctrl: ddd(),
-                title: 'Cadastrar',
-              ),
-            ],
+    return Form(
+      key: _formKey,
+      child: Container(
+        child: Scaffold(
+          body: Center(
+            child: ListView(
+              children: <Widget>[
+                SizedBox(
+                  height: 20,
+                ),
+                Image.asset(
+                  "assets/image/dogAndCat.png",
+                  height: 60,
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Input(
+                  TextInputType.text,
+                  'Usúario',
+                  _ctrlLoginUser,
+                  hint: 'user123',
+                  validator: _validateLogin,
+                  textInputAction: TextInputAction.next,
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Input(
+                  TextInputType.number,
+                  'Senha',
+                  _ctrlLoginPassword,
+                  obscurePassword: true,
+                  hint: 'Senha numérica de 4 dígitos',
+                  validator: _validatePassword,
+                  textInputAction: TextInputAction.next,
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Input(
+                  TextInputType.number,
+                  'Confirmar Senha',
+                  _ctrlLoginPasswordConfirm,
+                  obscurePassword: true,
+                  hint: 'Confirme a senha',
+                  validator: _validatePasswordConfirm,
+                  textInputAction: TextInputAction.done,
+                ),
+                SubmitBotton(
+                  title: 'Cadastrar',
+                  ctrl: _ctrlLogin,
+                ),
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 
-    String _validateLogin(String text) {
+  void _ctrlLogin() {
+    bool formOk = _formKey.currentState.validate();
+    if (!formOk) {
+      return;
+    }
+
+    String user = _ctrlLoginUser.text;
+    String password = _ctrlLoginPassword.text;
+    String passwordConfirm = _ctrlLoginPasswordConfirm.text;
+
+    print("User: $user, Senha: $password, Confirmação: $passwordConfirm");
+      Navigator.push(
+        context, MaterialPageRoute(builder: (context) => PetCadastro()));
+  }
+
+  String _validateLogin(String text) {
     if (text.isEmpty) {
       return "Digite o usúario!";
     }
     return null;
   }
 
-   String _validatePassword(String text) {
+  String _validatePassword(String text) {
     if (text.isEmpty) {
       return "Digite a senha!";
     }
@@ -95,52 +113,21 @@ class _CadastroState extends State<Cadastro> {
     return null;
   }
 
-    void _ctrlLogin() {
-    bool formOk = _formKey.currentState.validate();
-    if (!formOk) {
-      return;
-    }
-
-    String user = _ctrlLoginUser.text;
+  String _validatePasswordConfirm(String text) {
     String password = _ctrlLoginPassword.text;
 
-    print("User: $user, Senha: $password");
-     Navigator.push(
-         context, MaterialPageRoute(builder: (context) => TabelaConsumo()));
+    if (text.isEmpty) {
+      return "Confirme a senha!";
+    }
+    if (text.length <= 3 || text.length > 4) {
+      return "A senha deve conter 4 números.";
+    }
+    if(password != text){
+      return "As senhas são diferentes";
+    }
+    return null;
   }
+
 
 }
-  // void _ctrlLogin() {
-  //   bool formOk = _formKey.currentState.validate();
-  //   if (!formOk) {
-  //     return;
-  //   }
 
-  //   String user = _ctrlLoginUser.text;
-  //   String password = _ctrlLoginPassword.text;
-
-  //   print("User: $user, Senha: $password");
-  //   Navigator.push(
-  //       context, MaterialPageRoute(builder: (context) => PetCadastro()));
-  // }
-
-  // String _validateLogin(String text) {
-  //   if (text.isEmpty) {
-  //     return "Digite o usúario!";
-  //   }
-  //   return null;
-  // }
-
-  // String _validatePassword(String text) {
-  //   if (text.isEmpty) {
-  //     return "Digite a senha!";
-  //   }
-  //   if (text.length <= 3 || text.length > 4) {
-  //     return "A senha deve conter 4 números.";
-  //   }
-  //   return null;
-  // }
-
-  ddd(){
-
-  }
