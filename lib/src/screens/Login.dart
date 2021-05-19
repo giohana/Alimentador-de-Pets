@@ -27,6 +27,8 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return Form(
       key: _formKey,
       child: Container(
@@ -35,14 +37,14 @@ class _LoginState extends State<Login> {
             child: ListView(
               children: <Widget>[
                 SizedBox(
-                  height: 60,
+                  height: height * 0.06,
                 ),
                 Image.asset(
                   "assets/image/dogAndCat.png",
-                  height: 100,
+                  height: height * 0.16,
                 ),
                 SizedBox(
-                  height: 60,
+                    height: height * 0.09,
                 ),
                 Input(
                   TextInputType.text,
@@ -53,7 +55,8 @@ class _LoginState extends State<Login> {
                   textInputAction: TextInputAction.next,
                 ),
                 SizedBox(
-                  height: 10,
+                    //  height: 10,
+                    height: height * 0.03,
                 ),
                 Input(
                   TextInputType.number,
@@ -65,13 +68,17 @@ class _LoginState extends State<Login> {
                   textInputAction: TextInputAction.done,
                   focusNode: _focusSenha,
                 ),
+                SizedBox(
+                  height: height * 0.04,
+                ),
                 SubmitBotton(
                   ctrl: _ctrlLogin,
                   title: 'Entrar',
                 ),
-                //Hyperlink(text: 'Esqueci a senha', ctrl: () => launch('https://www.google.com/')),
+                // //Hyperlink(text: 'Esqueci a senha', ctrl: () => launch('https://www.google.com/')),
                 SizedBox(
-                  height: 10,
+                    //  height: 10,
+                    height: height * 0.04,
                 ),
                 Hyperlink(
                     text: 'Primeiro acesso',
@@ -99,8 +106,7 @@ class _LoginState extends State<Login> {
     String password = _ctrlLoginPassword.text;
 
     print("User: $user, Senha: $password");
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Home()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
   }
 
   String _validateLogin(String text) {

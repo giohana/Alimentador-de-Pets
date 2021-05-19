@@ -18,8 +18,8 @@ class ContainerTable extends StatelessWidget {
         ),
       ),
       color: Colors.lightBlue[600],
-      height: 40,
-      width: 110,
+     // height: 40,
+     // width: 110,
       margin: EdgeInsets.all(5.0),
     );
   }
@@ -30,6 +30,8 @@ class ContainerTableDois extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
      return Container(
       child: Container(
       child: Center(
@@ -40,8 +42,8 @@ class ContainerTableDois extends StatelessWidget {
         ),
       ),
       color: Colors.lightBlue[600],
-      height: 20,
-      width: 110,
+     // height: 20,
+      //width: 110,
       margin: EdgeInsets.all(5.0),
     ),
     );

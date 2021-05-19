@@ -4,6 +4,8 @@ import 'package:flutter_pets/src/components/Input.dart';
 class ModePetCadastro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+        final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return Form(
       child: Column(children: <Widget>[
         Input(
@@ -12,7 +14,7 @@ class ModePetCadastro extends StatelessWidget {
           ddd(),
         ),
         SizedBox(
-          height: 20,
+          //height: 20,
         ),
         Input(
           TextInputType.name,
@@ -21,7 +23,7 @@ class ModePetCadastro extends StatelessWidget {
         ),
 
         SizedBox(
-          height: 20,
+         // height: 20,
         ),
         // DropDownButton(),
         Input(

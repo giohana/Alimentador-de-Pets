@@ -10,17 +10,19 @@ class TableGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+        final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return Column(
       children: [
         SizedBox(
-            height: 20,
+            //height: 20,
           ),
         Text(
           petType,
           style: TextStyle(color: Colors.black, fontSize: 25),
         ),
         SizedBox(
-            height: 15,
+           // height: 15,
           ),
         Row(
           children: [
@@ -31,7 +33,7 @@ class TableGrid extends StatelessWidget {
         ),
         Row(children: [
           SizedBox(
-            width: 120,
+           // width: 120,
           ),
           ContainerTableDois(),
           

@@ -7,25 +7,20 @@ class Input extends StatefulWidget {
   final String label;
   final bool obscurePassword;
   final String hint;
-  final FormFieldValidator<String> validator; 
+  final FormFieldValidator<String> validator;
   final TextInputAction textInputAction;
   final FocusNode focusNode;
-  
 
   Input(
     this.keyboard,
-    this.label, 
-    this.ctrl,
-    {
+    this.label,
+    this.ctrl, {
     this.obscurePassword = false,
     this.hint,
     this.validator,
     this.textInputAction,
     this.focusNode,
-    
   });
-
-
 
   @override
   _InputState createState() => _InputState();
@@ -34,14 +29,16 @@ class Input extends StatefulWidget {
 class _InputState extends State<Input> {
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return Container(
-      height: 80,
+      height: height * 0.15,
       child: Row(children: <Widget>[
         SizedBox(
-          width: 40,
+          width: width * 0.12,
         ),
         Container(
-          width: 280,
+          width: width * 0.75,
           child: TextFormField(
             controller: widget.ctrl,
             keyboardType: widget.keyboard,
@@ -50,21 +47,21 @@ class _InputState extends State<Input> {
             obscureText: widget.obscurePassword,
             validator: widget.validator,
             style: TextStyle(
-              fontSize: 20,
+              fontSize: 25,
             ),
             decoration: InputDecoration(
               labelText: widget.label,
-              labelStyle: TextStyle(fontSize: 17),
+              labelStyle: TextStyle(fontSize: 20),
               hintText: widget.hint,
               hintStyle: TextStyle(
-                fontSize: 15,
+                fontSize: 16,
               ),
               border: OutlineInputBorder(),
             ),
           ),
         ),
         SizedBox(
-          width: 40,
+          width: width * 0.12,
         ),
       ]),
     );

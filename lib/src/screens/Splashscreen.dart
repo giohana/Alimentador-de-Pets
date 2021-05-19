@@ -17,6 +17,8 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return Stack(children: <Widget>[
       Center(
         child: Container(
@@ -27,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
               body: Center(
                 child: Image.asset(
                   "assets/image/dogAndCat.png",
-                  height: 150,
+                  height: height * 0.3,
                 ),
               ),
             )),

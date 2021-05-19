@@ -20,6 +20,8 @@ class _CadastroState extends State<Cadastro> {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return Form(
       key: _formKey,
       child: Container(
@@ -28,14 +30,14 @@ class _CadastroState extends State<Cadastro> {
             child: ListView(
               children: <Widget>[
                 SizedBox(
-                  height: 20,
+                  height: height * 0.05,
                 ),
                 Image.asset(
                   "assets/image/dogAndCat.png",
-                  height: 60,
+                  height: height * 0.12,
                 ),
                 SizedBox(
-                  height: 30,
+                  height: height * 0.04,
                 ),
                 Input(
                   TextInputType.text,
@@ -46,7 +48,7 @@ class _CadastroState extends State<Cadastro> {
                   textInputAction: TextInputAction.next,
                 ),
                 SizedBox(
-                  height: 30,
+                  height: height * 0.03,
                 ),
                 Input(
                   TextInputType.number,
@@ -58,7 +60,7 @@ class _CadastroState extends State<Cadastro> {
                   textInputAction: TextInputAction.next,
                 ),
                 SizedBox(
-                  height: 30,
+                  height: height * 0.03,
                 ),
                 Input(
                   TextInputType.number,
@@ -68,6 +70,9 @@ class _CadastroState extends State<Cadastro> {
                   hint: 'Confirme a senha',
                   validator: _validatePasswordConfirm,
                   textInputAction: TextInputAction.done,
+                ),
+                SizedBox(
+                  height: height * 0.03,
                 ),
                 SubmitBotton(
                   title: 'Cadastrar',
@@ -92,7 +97,7 @@ class _CadastroState extends State<Cadastro> {
     String passwordConfirm = _ctrlLoginPasswordConfirm.text;
 
     print("User: $user, Senha: $password, Confirmação: $passwordConfirm");
-      Navigator.push(
+    Navigator.push(
         context, MaterialPageRoute(builder: (context) => PetCadastro()));
   }
 
@@ -122,12 +127,9 @@ class _CadastroState extends State<Cadastro> {
     if (text.length <= 3 || text.length > 4) {
       return "A senha deve conter 4 números.";
     }
-    if(password != text){
+    if (password != text) {
       return "As senhas são diferentes";
     }
     return null;
   }
-
-
 }
-

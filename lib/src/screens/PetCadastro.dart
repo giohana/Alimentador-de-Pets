@@ -18,6 +18,8 @@ class PetCadastro extends StatefulWidget {
 class _PetCadastroState extends State<PetCadastro> {
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return Form(
       child: Container(
         child: Scaffold(
@@ -25,12 +27,12 @@ class _PetCadastroState extends State<PetCadastro> {
             child: ListView(
               children: <Widget>[
                 SizedBox(
-                  height: 15,
+                  height: height * 0.03,
                 ),
                 Row(
                   children: [
                     SizedBox(
-                      width: 18,
+                      width: width * 0.04,
                     ),
                     Text(
                       'Para continuar precisamos \nsaber alguns dados seus e de \nseu Pet!',
@@ -40,12 +42,12 @@ class _PetCadastroState extends State<PetCadastro> {
                   ],
                 ),
                 SizedBox(
-                  height: 10,
+                  height: height * 0.03,
                 ),
                 Row(
                   children: [
                     SizedBox(
-                      width: 18,
+                      width: width * 0.04,
                     ),
                     Image.asset(
                       "assets/image/Line.png",
@@ -54,7 +56,7 @@ class _PetCadastroState extends State<PetCadastro> {
                   ],
                 ),
                 SizedBox(
-                  height: 30,
+                  height: height * 0.05,
                 ),
                 Input(
                   TextInputType.name,
@@ -62,29 +64,31 @@ class _PetCadastroState extends State<PetCadastro> {
                   ddd(),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: height * 0.02,
                 ),
                 Image.asset(
                   "assets/image/Line.png",
                 ),
                 SizedBox(
-                  height: 30,
+                  height: height * 0.02,
                 ),
                 ModePetCadastro(),
                 SizedBox(
-                  height: 8,
+                  // height: 8,
+                  height: height * 0.01,
                 ),
                 Row(
                   children: [
                     SizedBox(
-                      width: 42,
+                      // width: 42,
+                      width: width * 0.13,
                     ),
                     new InkWell(
                         child: new Text(
                           'Ver sugestão de consumo',
                           style: TextStyle(
                             color: Colors.lightBlue[600],
-                            fontSize: 13,
+                            fontSize: 20,
                           ),
                         ),
                         onTap: () => {
@@ -96,16 +100,24 @@ class _PetCadastroState extends State<PetCadastro> {
                   ],
                 ),
                 SizedBox(
-                  height: 20,
+                  // height: 20,
+                  height: height * 0.05,
                 ),
                 Image.asset(
                   "assets/image/Line.png",
                 ),
                 SizedBox(
-                  height: 30,
+                  height: height * 0.03,
                 ),
-                Hyperlink(text: '+ Adicionar mais Pets', ctrl: ddd()),
-                SubmitBotton(ctrl: ddd(), title: 'Continuar')
+                Hyperlink(
+                    text: '+ Adicionar mais Pets', ctrl: () => moreConsumo()),
+                SizedBox(
+                  height: height * 0.03,
+                ),
+                SubmitBotton(ctrl: ddd(), title: 'Continuar'),
+                SizedBox(
+                  height: height * 0.05,
+                ),
               ],
             ),
           ),
@@ -113,6 +125,10 @@ class _PetCadastroState extends State<PetCadastro> {
       ),
     );
   }
-}
 
-ddd() {}
+  ddd() {}
+
+  Future<dynamic> moreConsumo() async {
+    return ModePetCadastro();
+  }
+}

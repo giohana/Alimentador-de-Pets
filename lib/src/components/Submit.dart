@@ -14,18 +14,21 @@ class SubmitBotton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return Container(
-      height: 120,
+      height: height * 0.1,
       child: Row(children: <Widget>[
         SizedBox(
-          width: 40,
+           width: width * 0.12,
         ),
         Container(
-          width: 280,
-          height: 50,
+          width: width * 0.75,
+         height: height * 0.09,
+         
           child: ButtonTheme(
-            minWidth: 200.0,
-            height: 100.0,
+            //minWidth: 200.0,
+            //height: 100.0,
             child: ElevatedButton(
               onPressed: ctrl,
               child: Text(
@@ -43,7 +46,7 @@ class SubmitBotton extends StatelessWidget {
           ),
         ),
         SizedBox(
-          width: 40,
+         width: width * 0.12,
         ),
       ]),
     );

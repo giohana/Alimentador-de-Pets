@@ -14,7 +14,7 @@ class Hyperlink extends StatelessWidget {
           text,
           style: TextStyle(
             color: Colors.lightBlue[600],
-            fontSize: 17
+            fontSize: 19
           ),
         ), 
         onTap: ctrl),
