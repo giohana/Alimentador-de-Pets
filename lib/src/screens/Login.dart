@@ -55,7 +55,6 @@ class _LoginState extends State<Login> {
                   textInputAction: TextInputAction.next,
                 ),
                 SizedBox(
-                    //  height: 10,
                     height: height * 0.03,
                 ),
                 Input(
