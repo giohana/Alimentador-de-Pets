@@ -36,3 +36,6 @@ class MyApp extends StatelessWidget {
 // utils  - ver exemplo
 // https://github.com/thingsup/thingsup-flutter-mqtt-example/blob/master/lib/MQTTExample.dart
 // https://github.com/thingsup/thingsup-esp32-mqtt-example
+
+// simulador mqtt
+//https://www.gambitcomm.com/site/mqttsimulator.php

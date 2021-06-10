@@ -3,6 +3,7 @@ import 'package:flutter_pets/src/components/BottomNavigation.dart';
 import 'package:flutter_pets/src/screens/Agendamento.dart';
 import 'package:flutter_pets/src/screens/HomeAgenda.dart';
 import 'package:flutter_pets/src/screens/Insights.dart';
+import 'package:flutter_pets/src/screens/Notifications.dart';
 import 'package:flutter_pets/src/screens/Perfil.dart';
 
 class Home extends StatefulWidget {
@@ -33,7 +34,10 @@ class _HomeState extends State<Home> {
             icon: const Icon(Icons.notifications_none),
             color: Colors.white,
             iconSize: 35,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Notifications()));
+            },
           ),
         ],
       ),

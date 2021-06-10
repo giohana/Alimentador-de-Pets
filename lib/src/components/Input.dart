@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class Input extends StatefulWidget {
   //const Input({Key key}) : super(key: key);
@@ -10,6 +11,8 @@ class Input extends StatefulWidget {
   final FormFieldValidator<String> validator;
   final TextInputAction textInputAction;
   final FocusNode focusNode;
+  final List<MaskTextInputFormatter> mask;
+  final List<String> autofillHints;
 
   Input(
     this.keyboard,
@@ -18,6 +21,8 @@ class Input extends StatefulWidget {
     this.obscurePassword = false,
     this.hint,
     this.validator,
+    this.mask,
+    this.autofillHints,
     this.textInputAction,
     this.focusNode,
   });
@@ -40,12 +45,14 @@ class _InputState extends State<Input> {
         Container(
           width: width * 0.75,
           child: TextFormField(
+            inputFormatters: widget.mask,
             controller: widget.ctrl,
             keyboardType: widget.keyboard,
             textInputAction: widget.textInputAction,
             focusNode: widget.focusNode,
             obscureText: widget.obscurePassword,
             validator: widget.validator,
+            autofillHints: widget.autofillHints,
             style: TextStyle(
               fontSize: 25,
             ),
