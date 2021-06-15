@@ -97,6 +97,9 @@ class _CadastroState extends State<Cadastro> {
     String passwordConfirm = _ctrlLoginPasswordConfirm.text;
 
     print("User: $user, Senha: $password, Confirmação: $passwordConfirm");
+
+    
+
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => PetCadastro()));
   }
